@@ -32,12 +32,18 @@ var obj_4 = {
 
 function deepCompare(obj1, obj2){
     for( var key in obj1){
+
+        if (obj1.hasOwnProperty(key) !== obj2.hasOwnProperty(key)) {
+            return false;
+        }
+
         if(typeof(obj1[key]) == "object"){
            // recursively call the function
             if(!deepCompare(obj1[key], obj2[key])) return false;
 
         }else{
             if(obj1[key] == undefined && obj2[key] == undefined) return false;
+            
             if(obj1[key].toString() != obj2[key].toString()){
                 return false;
             }
