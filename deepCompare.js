@@ -42,7 +42,7 @@ function deepCompare(obj1, obj2){
             if(!deepCompare(obj1[key], obj2[key])) return false;
 
         }else{
-            if(obj1[key] == undefined && obj2[key] == undefined) return false;
+            if( ( obj1[key] == undefined ) && ( obj2[key] == undefined) ) return false;
             
             if(obj1[key].toString() != obj2[key].toString()){
                 return false;
